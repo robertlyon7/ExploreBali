@@ -1,15 +1,18 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Menu, X } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { useState, useRef, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Menu, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ExploreBali() {
-  const [activeCategory, setActiveCategory] = useState("Adventure")
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [activeCategory, setActiveCategory] = useState("Adventure");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const categoryTabsRef = useRef<HTMLDivElement>(null);
+  const [showLeftScroll, setShowLeftScroll] = useState(false);
+  const [showRightScroll, setShowRightScroll] = useState(false);
 
   const categorizedDestinations = {
     Adventure: [
@@ -92,9 +95,49 @@ export default function ExploreBali() {
         image: "/images/tirta-empul.jpg",
       },
     ],
-  }
+  };
 
-  const categories = ["Adventure", "Romantic", "Mountains", "Heritage"]
+  const categories = ["Adventure", "Romantic", "Mountains", "Heritage"];
+
+  useEffect(() => {
+    const checkScroll = () => {
+      if (categoryTabsRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } =
+          categoryTabsRef.current;
+        setShowLeftScroll(scrollLeft > 0);
+        setShowRightScroll(scrollLeft < scrollWidth - clientWidth - 5); // 5px buffer
+      }
+    };
+
+    checkScroll();
+    window.addEventListener("resize", checkScroll);
+    return () => window.removeEventListener("resize", checkScroll);
+  }, []);
+
+  // Handle category tab scrolling
+  const scrollTabs = (direction: "left" | "right") => {
+    if (categoryTabsRef.current) {
+      const scrollAmount = 200; // Adjust as needed
+      const newScrollLeft =
+        direction === "left"
+          ? categoryTabsRef.current.scrollLeft - scrollAmount
+          : categoryTabsRef.current.scrollLeft + scrollAmount;
+
+      categoryTabsRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  // Handle scroll event to update arrow visibility
+  const handleScroll = () => {
+    if (categoryTabsRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = categoryTabsRef.current;
+      setShowLeftScroll(scrollLeft > 0);
+      setShowRightScroll(scrollLeft < scrollWidth - clientWidth - 5); // 5px buffer
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
@@ -105,14 +148,23 @@ export default function ExploreBali() {
           </Link>
 
           <div className="hidden md:flex space-x-8">
-            <Link href="/" className="text-[#4aa4e9] hover:text-[#4aa4e9] transition-colors">
+            <Link
+              href="/"
+              className="text-[#4aa4e9] hover:text-[#4aa4e9] transition-colors"
+            >
               Home
             </Link>
-            <Link href="/destinations" className="hover:text-[#4aa4e9] transition-colors">
+            <Link
+              href="/destinations"
+              className="hover:text-[#4aa4e9] transition-colors"
+            >
               Destinations
             </Link>
-            <Link href="/about" className="hover:text-[#4aa4e9] transition-colors">
-              About
+            <Link
+              href="/about"
+              className="hover:text-[#4aa4e9] transition-colors"
+            >
+              About Us
             </Link>
           </div>
 
@@ -124,12 +176,16 @@ export default function ExploreBali() {
             <div className="relative w-6 h-6">
               <Menu
                 className={`absolute inset-0 w-6 h-6 transition-all duration-300 ease-in-out ${
-                  isMobileMenuOpen ? "opacity-0 rotate-180 scale-75" : "opacity-100 rotate-0 scale-100"
+                  isMobileMenuOpen
+                    ? "opacity-0 rotate-180 scale-75"
+                    : "opacity-100 rotate-0 scale-100"
                 }`}
               />
               <X
                 className={`absolute inset-0 w-6 h-6 transition-all duration-300 ease-in-out ${
-                  isMobileMenuOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 rotate-180 scale-75"
+                  isMobileMenuOpen
+                    ? "opacity-100 rotate-0 scale-100"
+                    : "opacity-0 rotate-180 scale-75"
                 }`}
               />
             </div>
@@ -146,7 +202,9 @@ export default function ExploreBali() {
               <Link
                 href="/"
                 className={`text-[#4aa4e9] hover:text-[#4aa4e9] transition-all duration-200 px-4 py-3 rounded-lg hover:bg-white/10 transform ${
-                  isMobileMenuOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
+                  isMobileMenuOpen
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-4 opacity-0"
                 }`}
                 style={{ transitionDelay: isMobileMenuOpen ? "100ms" : "0ms" }}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -156,7 +214,9 @@ export default function ExploreBali() {
               <Link
                 href="/destinations"
                 className={`hover:text-[#4aa4e9] transition-all duration-200 px-4 py-3 rounded-lg hover:bg-white/10 transform ${
-                  isMobileMenuOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
+                  isMobileMenuOpen
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-4 opacity-0"
                 }`}
                 style={{ transitionDelay: isMobileMenuOpen ? "150ms" : "0ms" }}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -166,7 +226,9 @@ export default function ExploreBali() {
               <Link
                 href="/about"
                 className={`hover:text-[#4aa4e9] transition-all duration-200 px-4 py-3 rounded-lg hover:bg-white/10 transform ${
-                  isMobileMenuOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
+                  isMobileMenuOpen
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-4 opacity-0"
                 }`}
                 style={{ transitionDelay: isMobileMenuOpen ? "200ms" : "0ms" }}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -179,7 +241,7 @@ export default function ExploreBali() {
       </nav>
 
       <section className="bg-[#050d21] text-white">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 p-8 min-h-[500px]">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-8 p-8 min-h-[700px]">
           <div className="flex flex-col justify-center">
             <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
               Discover,
@@ -187,20 +249,26 @@ export default function ExploreBali() {
               Explore Bali
             </h1>
             <p className="text-base md:text-lg mb-8 text-gray-300 leading-relaxed">
-              Explore stunning destinations, unique experiences, and plan your perfect trip today!
+              Explore stunning destinations, unique experiences, and plan your
+              perfect trip today!
             </p>
             <Link href="/destinations">
-              <Button className="bg-[#4aa4e9] hover:bg-[#4aa4e9]/90 w-fit px-6 py-3 rounded-full">Explore Now →</Button>
+              <Button className="bg-[#4aa4e9] hover:bg-[#4aa4e9]/90 w-fit px-6 py-3 rounded-full">
+                Explore Now →
+              </Button>
             </Link>
           </div>
-          <div className="relative">
-            <Image
-              src="/images/landingimage1.jpg"
-              alt="Bali Temple Pathway"
-              width={600}
-              height={500}
+
+          <div className="relative rounded-lg overflow-hidden h-full">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
               className="w-full h-full object-cover rounded-lg"
-            />
+            >
+              <source src="/videos/balivideo.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </section>
@@ -208,55 +276,51 @@ export default function ExploreBali() {
       <section className="py-16 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8">
-            <p className="text-[#4aa4e9] font-medium mb-2">Traveler's Favourite</p>
+            <p className="text-[#4aa4e9] font-medium mb-2">
+              Traveler's Favourite
+            </p>
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#050d21]">
               Explore All Popular
               <br />
               Locations
             </h2>
-            <p className="text-gray-600 max-w-md">
-              Get ready and embark on your dream adventure with our expert guidance and tailored experiences.
+            <p className="text-gray-600 max-w-md mb-8">
+              Plan, book, and embark on your dream adventure with our expert
+              guidance and tailored experiences.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 max-w-4xl">
-            <div className="space-y-4">
-              <div className="relative overflow-hidden rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+            <div className="md:col-span-6 h-full">
+              <div className="relative overflow-hidden rounded-lg h-full">
                 <Image
-                  src="/images/besakih-temple.jpg"
-                  alt="Ancient Temple"
-                  width={400}
-                  height={300}
-                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="relative overflow-hidden rounded-lg">
-                <Image
-                  src="/images/landingimage2.jpg"
-                  alt="Beach Resort"
-                  width={400}
-                  height={200}
-                  className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300"
+                  src="/images/landingimage4.jpg"
+                  alt="Bali Temple"
+                  width={600}
+                  height={600}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  style={{ height: "100%", minHeight: "400px" }}
                 />
               </div>
             </div>
-            <div className="space-y-4">
+
+            <div className="md:col-span-6 flex flex-col gap-4">
               <div className="relative overflow-hidden rounded-lg">
                 <Image
-                  src="/images/landingimage3.jpg"
-                  alt="Coastal Paradise"
-                  width={400}
-                  height={200}
-                  className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300"
+                  src="/images/landingimage2.jpg"
+                  alt="Bali Beach"
+                  width={600}
+                  height={280}
+                  className="w-full h-48 md:h-[195px] object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="relative overflow-hidden rounded-lg">
                 <Image
-                  src="/images/landingimage4.jpg"
-                  alt="Ocean View"
-                  width={400}
-                  height={300}
-                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                  src="/images/landingimage3.jpg"
+                  alt="Bali Coast"
+                  width={600}
+                  height={280}
+                  className="w-full h-48 md:h-[195px] object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </div>
@@ -266,27 +330,61 @@ export default function ExploreBali() {
 
       <section className="py-16 px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#050d21]">Plan your Next Trip</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#050d21]">
+            Plan your Next Trip
+          </h2>
+          <div className="relative mb-8">
+            <button
+              onClick={() => scrollTabs("left")}
+              className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-full p-1 shadow-md md:hidden ${
+                showLeftScroll ? "opacity-100" : "opacity-0 pointer-events-none"
+              } transition-opacity duration-300`}
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-5 h-5 text-gray-700" />
+            </button>
+            <div
+              ref={categoryTabsRef}
+              className="flex space-x-8 border-b overflow-x-auto scrollbar-hide pb-2"
+              onScroll={handleScroll}
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`pb-2 border-b-2 font-medium transition-colors whitespace-nowrap flex-shrink-0 ${
+                    activeCategory === category
+                      ? "border-[#4aa4e9] text-[#4aa4e9]"
+                      : "border-transparent text-gray-500 hover:text-[#4aa4e9]"
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
 
-          <div className="flex space-x-8 mb-8 border-b">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`pb-2 border-b-2 font-medium transition-colors ${
-                  activeCategory === category
-                    ? "border-[#4aa4e9] text-[#4aa4e9]"
-                    : "border-transparent text-gray-500 hover:text-[#4aa4e9]"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
+            <button
+              onClick={() => scrollTabs("right")}
+              className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-full p-1 shadow-md md:hidden ${
+                showRightScroll
+                  ? "opacity-100"
+                  : "opacity-0 pointer-events-none"
+              } transition-opacity duration-300`}
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-5 h-5 text-gray-700" />
+            </button>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {categorizedDestinations[activeCategory as keyof typeof categorizedDestinations].map((destination) => (
-              <Link key={destination.id} href={`/destinations/${destination.id}`}>
+            {categorizedDestinations[
+              activeCategory as keyof typeof categorizedDestinations
+            ].map((destination) => (
+              <Link
+                key={destination.id}
+                href={`/destinations/${destination.id}`}
+              >
                 <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer">
                   <CardContent className="p-0">
                     <Image
@@ -297,8 +395,12 @@ export default function ExploreBali() {
                       className="w-full h-48 object-cover"
                     />
                     <div className="p-4">
-                      <h3 className="font-semibold text-[#050d21] mb-1">{destination.title}</h3>
-                      <p className="text-sm text-gray-600">{destination.subtitle}</p>
+                      <h3 className="font-semibold text-[#050d21] mb-1">
+                        {destination.title}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {destination.subtitle}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
@@ -322,9 +424,13 @@ export default function ExploreBali() {
               />
               <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                 <div className="text-center text-white">
-                  <h2 className="text-2xl md:text-4xl font-bold mb-6">Ready for your Next Adventure</h2>
+                  <h2 className="text-2xl md:text-4xl font-bold mb-6">
+                    Ready for your Next Adventure
+                  </h2>
                   <Link href="/destinations">
-                    <Button className="bg-[#4aa4e9] hover:bg-[#4aa4e9]/90 px-6 py-3 rounded-full">Explore Now →</Button>
+                    <Button className="bg-[#4aa4e9] hover:bg-[#4aa4e9]/90 px-6 py-3 rounded-full">
+                      Explore Now →
+                    </Button>
                   </Link>
                 </div>
               </div>
@@ -342,39 +448,71 @@ export default function ExploreBali() {
             </div>
 
             <div className="flex space-x-8 mb-8">
-              <a href="#" className="text-white hover:text-[#4aa4e9] transition-colors">
-                Discover
+              <a
+                href="/"
+                className="text-white hover:text-[#4aa4e9] transition-colors"
+              >
+                Home
               </a>
-              <a href="#" className="text-white hover:text-[#4aa4e9] transition-colors">
-                Trips
+              <a
+                href="/destinations"
+                className="text-white hover:text-[#4aa4e9] transition-colors"
+              >
+                Destinations
               </a>
-              <a href="#" className="text-white hover:text-[#4aa4e9] transition-colors">
+              <a
+                href="/about"
+                className="text-white hover:text-[#4aa4e9] transition-colors"
+              >
                 About Us
               </a>
             </div>
 
             <p className="text-gray-300 max-w-2xl leading-relaxed">
-              Welcome to Explore Bali, your ultimate guide to the breathtaking island of Bali! Whether you're a
-              first-time visitor or a seasoned traveler, our website is designed to help you discover the best that Bali
-              has to offer—from pristine beaches and lush rice terraces to vibrant cultural experiences and hidden gems.
+              Welcome to Explore Bali, your ultimate guide to the breathtaking
+              island of Bali! Whether you're a first-time visitor or a seasoned
+              traveler, our website is designed to help you discover the best
+              that Bali has to offer—from pristine beaches and lush rice
+              terraces to vibrant cultural experiences and hidden gems.
             </p>
           </div>
 
           <div className="border-t border-gray-700 pt-6">
             <div className="flex justify-between items-center">
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-[#4aa4e9] transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <a
+                  href="https://x.com/"
+                  className="text-gray-400 hover:text-[#4aa4e9] transition-colors"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                   </svg>
                 </a>
-                <a href="#" className="text-gray-400 hover:text-[#4aa4e9] transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <a
+                  href="https://www.facebook.com/"
+                  className="text-gray-400 hover:text-[#4aa4e9] transition-colors"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                   </svg>
                 </a>
-                <a href="#" className="text-gray-400 hover:text-[#4aa4e9] transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <a
+                  href="https://www.pinterest.com/"
+                  className="text-gray-400 hover:text-[#4aa4e9] transition-colors"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z" />
                   </svg>
                 </a>
@@ -385,5 +523,5 @@ export default function ExploreBali() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

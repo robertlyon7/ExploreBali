@@ -556,7 +556,7 @@ export default function DestinationDetailPage({ params }: PageProps) {
               Destinations
             </Link>
             <Link href="/about" className="hover:text-[#4aa4e9] transition-colors">
-              About
+              About Us
             </Link>
           </div>
 
@@ -625,7 +625,7 @@ export default function DestinationDetailPage({ params }: PageProps) {
       </nav>
 
       {/* Back Button */}
-      <div className="max-w-7xl mx-auto px-8 py-4">
+      <div className="max-w-7xl mx-auto px-8 py-4 relative z-10">
         <Link href="/destinations">
           <Button variant="ghost" className="flex items-center gap-2 text-[#050d21] hover:text-[#4aa4e9]">
             <ArrowLeft className="w-4 h-4" />

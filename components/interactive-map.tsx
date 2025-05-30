@@ -103,7 +103,7 @@ export default function InteractiveMap({ latitude, longitude, destinationName, z
   return (
     <div
       ref={mapRef}
-      className="w-full h-64 rounded-lg border-2 border-gray-200 shadow-sm"
+      className="w-full h-64 rounded-lg border-2 border-gray-200 shadow-sm relative z-0"
       style={{ minHeight: "256px" }}
     />
   )
