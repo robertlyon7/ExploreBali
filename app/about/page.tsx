@@ -67,14 +67,12 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
-      {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-[#050d21] text-white p-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="text-lg md:text-xl font-bold">
             Explore <span className="text-[#4aa4e9]">Bali</span>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             <Link href="/" className="hover:text-[#4aa4e9] transition-colors">
               Home
@@ -87,7 +85,6 @@ export default function AboutPage() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 relative z-50 transition-all duration-300 ease-in-out hover:bg-white/10 rounded-lg"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -108,7 +105,6 @@ export default function AboutPage() {
           </button>
         </div>
 
-        {/* Mobile Navigation Dropdown */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
             isMobileMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
@@ -144,14 +140,13 @@ export default function AboutPage() {
                 style={{ transitionDelay: isMobileMenuOpen ? "200ms" : "0ms" }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                About
+                About Us
               </Link>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="py-16 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -198,7 +193,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Statistics Section */}
       <section className="py-16 px-8 bg-[#050d21] text-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -222,7 +216,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Mission Section */}
       <section className="py-16 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -273,7 +266,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Values Section */}
       <section className="py-16 px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -304,7 +296,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
       <section className="py-16 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -337,7 +328,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Call to Action Section */}
       <section className="py-16 px-8 relative overflow-hidden">
         <div className="absolute inset-0">
           <Image

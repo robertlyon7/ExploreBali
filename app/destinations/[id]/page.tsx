@@ -21,11 +21,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/pantai-pandawa.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "tanah-lot": {
@@ -40,11 +40,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/tanah-lot.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   bedugul: {
@@ -59,11 +59,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/bedugul.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "tukad-cepung-waterfall": {
@@ -78,11 +78,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/tukad-cepung.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "lembongan-island": {
@@ -97,11 +97,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/lembongan-island.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "bunut-bolong": {
@@ -116,11 +116,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/bunut-bolong.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "pantai-soka": {
@@ -135,11 +135,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/pantai-soka.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "pantai-suraberata": {
@@ -154,11 +154,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/pantai-suraberata.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "alas-kedaton": {
@@ -173,11 +173,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/alas-kedaton.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   uluwatu: {
@@ -192,11 +192,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/uluwatu.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "mount-batur": {
@@ -211,11 +211,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/mount-batur.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   tegallalang: {
@@ -230,11 +230,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/tegallalang.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "sekumpul-waterfall": {
@@ -249,11 +249,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/sekumpul-waterfall.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   jatiluwih: {
@@ -268,11 +268,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/jatiluwih.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "nusa-penida": {
@@ -287,11 +287,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/nusa-penida.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "kuta-beach": {
@@ -306,11 +306,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/kuta-beach.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   seminyak: {
@@ -325,11 +325,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/seminyak.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "sanur-beach": {
@@ -344,11 +344,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/sanur-beach.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "besakih-temple": {
@@ -363,11 +363,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/besakih-temple.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "goa-gajah": {
@@ -382,11 +382,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/goa-gajah.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "tirta-empul": {
@@ -401,11 +401,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/tirta-empul.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "ubud-monkey-forest": {
@@ -420,11 +420,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/ubud-monkey-forest.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "campuhan-ridge": {
@@ -439,11 +439,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/campuhan-ridge.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "gitgit-waterfall": {
@@ -458,11 +458,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/gitgit-waterfall.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "banyumala-waterfall": {
@@ -477,11 +477,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/banyumala-waterfall.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "lovina-beach": {
@@ -496,11 +496,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/lovina-beach.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
   "amed-beach": {
@@ -515,11 +515,11 @@ const destinationsData = {
     ],
     gallery: [
       "/images/amed-beach.jpg",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "/images/aboutimage1.jpg",
+      "/images/aboutimage2.jpg",
+      "/images/aboutimage3.jpg",
+      "/images/landingimage4.jpg",
+      "/images/landingimage5.jpg",
     ],
   },
 }
@@ -540,14 +540,12 @@ export default function DestinationDetailPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
-      {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-[#050d21] text-white p-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="text-lg md:text-xl font-bold">
             Explore <span className="text-[#4aa4e9]">Bali</span>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             <Link href="/" className="hover:text-[#4aa4e9] transition-colors">
               Home
@@ -560,7 +558,6 @@ export default function DestinationDetailPage({ params }: PageProps) {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 relative z-50 transition-all duration-300 ease-in-out hover:bg-white/10 rounded-lg"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -581,7 +578,6 @@ export default function DestinationDetailPage({ params }: PageProps) {
           </button>
         </div>
 
-        {/* Mobile Navigation Dropdown */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
             isMobileMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
@@ -617,14 +613,13 @@ export default function DestinationDetailPage({ params }: PageProps) {
                 style={{ transitionDelay: isMobileMenuOpen ? "200ms" : "0ms" }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                About
+                About Us
               </Link>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Back Button */}
       <div className="max-w-7xl mx-auto px-8 py-4 relative z-10">
         <Link href="/destinations">
           <Button variant="ghost" className="flex items-center gap-2 text-[#050d21] hover:text-[#4aa4e9]">
@@ -634,9 +629,7 @@ export default function DestinationDetailPage({ params }: PageProps) {
         </Link>
       </div>
 
-      {/* Destination Content */}
       <div className="max-w-4xl mx-auto px-8 pb-16">
-        {/* Header */}
         <div className="mb-8">
           <h1 className="text-2xl md:text-4xl font-bold text-[#050d21] mb-4">{destination.name}</h1>
           <div className="flex items-center text-gray-600 mb-6">
@@ -645,7 +638,6 @@ export default function DestinationDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Hero Image */}
         <div className="mb-8">
           <Image
             src={destination.heroImage || "/placeholder.svg"}
@@ -656,7 +648,6 @@ export default function DestinationDetailPage({ params }: PageProps) {
           />
         </div>
 
-        {/* Description */}
         <div className="mb-12">
           <h2 className="text-xl md:text-2xl font-bold text-[#050d21] mb-6">Description</h2>
           <div className="space-y-4">
@@ -668,7 +659,6 @@ export default function DestinationDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Interactive Map */}
         <div className="mb-12">
           <h2 className="text-xl md:text-2xl font-bold text-[#050d21] mb-6">Location</h2>
           <div className="mb-4">
@@ -687,7 +677,6 @@ export default function DestinationDetailPage({ params }: PageProps) {
           />
         </div>
 
-        {/* Photo Gallery */}
         <div>
           <h2 className="text-xl md:text-2xl font-bold text-[#050d21] mb-6">Photo Gallery</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

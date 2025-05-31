@@ -114,10 +114,9 @@ export default function ExploreBali() {
     return () => window.removeEventListener("resize", checkScroll);
   }, []);
 
-  // Handle category tab scrolling
   const scrollTabs = (direction: "left" | "right") => {
     if (categoryTabsRef.current) {
-      const scrollAmount = 200; // Adjust as needed
+      const scrollAmount = 200;
       const newScrollLeft =
         direction === "left"
           ? categoryTabsRef.current.scrollLeft - scrollAmount
@@ -130,7 +129,6 @@ export default function ExploreBali() {
     }
   };
 
-  // Handle scroll event to update arrow visibility
   const handleScroll = () => {
     if (categoryTabsRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = categoryTabsRef.current;
@@ -233,7 +231,7 @@ export default function ExploreBali() {
                 style={{ transitionDelay: isMobileMenuOpen ? "200ms" : "0ms" }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                About
+                About Us
               </Link>
             </div>
           </div>
@@ -410,7 +408,42 @@ export default function ExploreBali() {
         </div>
       </section>
 
-      {/* Ready for Next Adventure */}
+      <section className="py-16 px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative w-full h-80 md:h-[400px] rounded-lg shadow-lg overflow-hidden">
+              <video
+                src="/videos/videosection.mp4"
+                autoPlay
+                muted
+                loop
+                controls
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#050d21]">
+                Feel The Culture
+              </h2>
+              <p className="text-gray-600 max-w-md mb-8">
+                Experience the vibrant soul of Bali as you journey through its
+                exotic destinations, from lush rice terraces to serene
+                temples. Let the hypnotic sounds of gamelan music guide your
+                path, echoing through villages and sacred spaces, adding a
+                magical rhythm to your exploration. Every corner of Bali invites
+                you to discover its heritage, warmth, and unforgettable charm.
+              </p>
+              <div className="flex space-x-4">
+                <Button className="bg-[#4aa4e9] hover:bg-[#4aa4e9]/90 rounded-full">
+                  <Link href="/destinations">Explore Destinations</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 px-8">
         <div className="max-w-6xl mx-auto">
           <Card className="overflow-hidden">
@@ -439,7 +472,6 @@ export default function ExploreBali() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-[#050d21] text-white py-12 px-8">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8">

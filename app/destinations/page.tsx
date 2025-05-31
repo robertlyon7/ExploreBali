@@ -259,15 +259,13 @@ export default function DestinationsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#fafafa]">
-      {/* Navigation */}
+    <div className="flex flex-col min-h-screen bg-[#fafafa]">
       <nav className="sticky top-0 z-50 bg-[#050d21] text-white p-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="text-lg md:text-xl font-bold">
             Explore <span className="text-[#4aa4e9]">Bali</span>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             <Link href="/" className="hover:text-[#4aa4e9] transition-colors">
               Home
@@ -280,7 +278,6 @@ export default function DestinationsPage() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 relative z-50 transition-all duration-300 ease-in-out hover:bg-white/10 rounded-lg"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -301,7 +298,6 @@ export default function DestinationsPage() {
           </button>
         </div>
 
-        {/* Mobile Navigation Dropdown */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
             isMobileMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
@@ -337,21 +333,19 @@ export default function DestinationsPage() {
                 style={{ transitionDelay: isMobileMenuOpen ? "200ms" : "0ms" }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                About
+                About Us
               </Link>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Header Section */}
-      <section className="py-16 px-8 bg-white">
+      <section className="flex-grow py-16 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
             <h1 className="text-2xl md:text-4xl font-bold mb-4 text-[#050d21]">List of Destinations</h1>
             <p className="text-sm md:text-base text-gray-600 mb-8">Discover the most popular destinations in Bali</p>
 
-            {/* Search Bar */}
             <div className="max-w-md mx-auto relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <Input
@@ -360,14 +354,13 @@ export default function DestinationsPage() {
                 value={searchTerm}
                 onChange={(e) => {
                   setSearchTerm(e.target.value)
-                  setCurrentPage(1) // Reset to first page when searching
+                  setCurrentPage(1) 
                 }}
                 className="pl-10 py-3 border-2 border-gray-200 focus:border-[#4aa4e9] rounded-lg"
               />
             </div>
           </div>
 
-          {/* Results Info */}
           <div className="mb-6">
             <p className="text-gray-600 text-center">
               Showing {startIndex + 1}-{Math.min(endIndex, filteredDestinations.length)} of{" "}
@@ -375,7 +368,6 @@ export default function DestinationsPage() {
             </p>
           </div>
 
-          {/* Destinations Grid */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {currentDestinations.map((destination) => (
               <Link key={destination.id} href={`/destinations/${destination.id}`}>
@@ -402,14 +394,12 @@ export default function DestinationsPage() {
             ))}
           </div>
 
-          {/* No Results */}
           {filteredDestinations.length === 0 && (
             <div className="text-center py-12">
               <p className="text-gray-500 text-lg">No destinations found matching your search.</p>
             </div>
           )}
 
-          {/* Pagination */}
           {totalPages > 1 && (
             <div className="flex justify-center">
               <div className="flex items-center space-x-2 bg-white rounded-full shadow-lg px-4 py-2">
